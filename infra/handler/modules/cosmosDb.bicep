@@ -3,6 +3,7 @@ import { ResourceInfo, CosmosDbIngress, CosmosDbConfig } from '../../shared/type
 param namePrefix string
 param nameSuffix string
 param location string
+
 param cosmosDbIngress CosmosDbIngress
 param cosmosDbConfig CosmosDbConfig
 
