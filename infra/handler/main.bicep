@@ -58,7 +58,7 @@ module dataIdentity 'modules/identity.bicep' = {
   }
 }
 
-module cosmosDb 'modules/EnvironmentSpecificCosmosDb.bicep' = {
+module cosmosDb 'modules/cosmosDb.bicep' = {
   name: 'cosmosDb'
   params: {
     namePrefix: namePrefix
