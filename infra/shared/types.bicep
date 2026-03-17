@@ -34,13 +34,3 @@ type CopilotHandlerConfig = {
   @description('Entra ID applications that are authorized to call the handler API')
   authorizedAppIds: string[]
 }
-
-@export()
-type CosmosDbConfigs = {
-  @description('The throughput to provision for the Cosmos DB SQL database')
-  sqlDatabaseThroughput: int
-  @description('Indicates whether the Cosmos DB SQL database is zone redundant')
-  isZoneRedundant: bool
-  @description('Indicates whether to enable Continous Backup for the Cosmos DB account')
-  enableContinuousBackup: bool
-}

@@ -1,4 +1,4 @@
-import { ContainerImage, CosmosDbIngress, CopilotHandlerConfig, ResourceInfo, CosmosDbConfigs } from '../shared/types.bicep'
+import { ContainerImage, CosmosDbIngress, CopilotHandlerConfig, ResourceInfo } from '../shared/types.bicep'
 
 param namePrefix string
 param nameSuffix string
@@ -9,7 +9,6 @@ param backendImage ContainerImage
 param openAiLocation string
 param cosmosDbIngress CosmosDbIngress
 param handlerConfig CopilotHandlerConfig
-param cosmosDbConfigs CosmosDbConfigs
 
 // container apps and container jobs have restrictions on name lengths.
 // as a result, we need to be able to shorten the names in certain regions.
@@ -58,14 +57,13 @@ module dataIdentity 'modules/identity.bicep' = {
   }
 }
 
-module cosmosDb 'modules/mycosmosDbModule.bicep' = {
+module cosmosDb 'modules/cosmosDb.bicep' = {
   name: 'cosmosDb'
   params: {
     namePrefix: namePrefix
     nameSuffix: nameSuffix
     location: location
     cosmosDbIngress: cosmosDbIngress
-    cosmosDbConfigs: cosmosDbConfigs
   }
 }
 

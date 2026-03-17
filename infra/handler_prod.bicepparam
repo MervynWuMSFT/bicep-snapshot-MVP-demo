@@ -33,9 +33,3 @@ param handlerConfig = {
     '6afa3943-03b1-459b-8128-25473180430d'
   ]
 }
-
-param cosmosDbConfigs = {
-  sqlDatabaseThroughput: 40000
-  isZoneRedundant: true
-  enableContinuousBackup: true
-}
