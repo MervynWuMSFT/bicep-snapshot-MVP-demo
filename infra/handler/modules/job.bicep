@@ -1,5 +1,5 @@
 import { UserAssignedIdentity, ContainerImage, ResourceInfo } from '../../shared/types.bicep'
-import { AcrPull, AppConfigurationDataReader, CognitiveServicesOpenAIContributor, SearchIndexDataContributor, CosmosDbDataContributor, SearchSearviceContributor, ContainerJobContributor } from '../../shared/builtInRoles.bicep'
+import { AcrPull, SearchIndexDataContributor, CosmosDbDataContributor, SearchSearviceContributor, ContainerJobContributor } from '../../shared/builtInRoles.bicep'
 
 param appEnvironment ResourceInfo
 param name string
