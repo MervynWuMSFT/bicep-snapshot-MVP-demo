@@ -1,4 +1,4 @@
-import { UserAssignedIdentity, ResourceInfo, CopilotHandlerConfig } from '../../shared/types.bicep'
+import { ResourceInfo, CopilotHandlerConfig } from '../../shared/types.bicep'
 import { replaceMultiple } from '../../shared/helpers.bicep'
 
 param envName string

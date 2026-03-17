@@ -1,4 +1,3 @@
-import { UserAssignedIdentity } from '../shared/types.bicep'
 import { Contributor } from '../shared/builtInRoles.bicep'
 
 param registryName string

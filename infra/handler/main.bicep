@@ -1,4 +1,4 @@
-import { UserAssignedIdentity, ContainerImage, CosmosDbIngress, CopilotHandlerConfig, ResourceInfo } from '../shared/types.bicep'
+import { ContainerImage, CosmosDbIngress, CopilotHandlerConfig, ResourceInfo } from '../shared/types.bicep'
 
 param namePrefix string
 param nameSuffix string
