@@ -34,3 +34,10 @@ type CopilotHandlerConfig = {
   @description('Entra ID applications that are authorized to call the handler API')
   authorizedAppIds: string[]
 }
+
+@export()
+type CosmosDbConfig = {
+  throughput: int
+  isZoneRedundant: bool
+  enableMultipleReadLocations: bool
+}
