@@ -1,10 +1,11 @@
-import { ResourceInfo, CosmosDbIngress } from '../../shared/types.bicep'
+import { ResourceInfo, CosmosDbIngress, CosmosDbConfig } from '../../shared/types.bicep'
 
 param namePrefix string
 param nameSuffix string
 param location string
 
 param cosmosDbIngress CosmosDbIngress
+param cosmosDbConfig CosmosDbConfig
 
 var names = {
   account: '${namePrefix}-cosmosdb-${nameSuffix}'
@@ -27,7 +28,7 @@ resource cosmosAccount 'Microsoft.DocumentDB/databaseAccounts@2023-03-15' = {
     locations: [
       {
         failoverPriority: 0
-        isZoneRedundant: false
+        isZoneRedundant: cosmosDbConfig.isZoneRedundant
         locationName: location
       }
     ]
@@ -55,7 +56,7 @@ resource database 'Microsoft.DocumentDB/databaseAccounts/sqlDatabases@2023-03-15
     }
     options: {
       autoscaleSettings: {
-        maxThroughput: 10000
+        maxThroughput: cosmosDbConfig.throughput
       }
     }
   }
